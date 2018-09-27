@@ -48,18 +48,14 @@ public class MenuUtama extends javax.swing.JFrame {
                 formWindowOpened(evt);
             }
         });
-        getContentPane().setLayout(null);
 
         jLabel2.setFont(new java.awt.Font("Myanmar Text", 0, 18)); // NOI18N
-        jLabel2.setText("Sistem Informasi Arsip Surat Masuk dan Surat Keluar di PDAM Purwakarta");
+        jLabel2.setText("Sistem Informasi Pengolahan Surat Masuk dan Surat Keluar PDAM Purwakarta\n");
         jLabel2.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(310, 0, 720, 40);
+        getContentPane().add(jLabel2, java.awt.BorderLayout.CENTER);
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon("E:\\Data Semester 6\\Project TA\\Hilal\\Image\\IXllfYfW_400x400.jpg")); // NOI18N
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(100, 160, 960, 400);
+        getContentPane().add(jLabel1, java.awt.BorderLayout.PAGE_START);
 
         jMenu1.setText("Master");
         jMenu1.addMenuListener(new javax.swing.event.MenuListener() {
@@ -126,10 +122,17 @@ public class MenuUtama extends javax.swing.JFrame {
 
     private void btn_MenuKaryawanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_MenuKaryawanActionPerformed
         // TODO add your handling code here:
-        MasterKaryawan B = new MasterKaryawan();
-             this.add(B);
-            B.setVisible(true);
+        //MasterKaryawan B = new MasterKaryawan();
+             //this.add(B);
+            //B.setVisible(true);
             //new MasterKaryawan().show();
+            
+            MasterKaryawan Mkaryawan = new MasterKaryawan();
+            
+            MasterKaryawan frame = new MasterKaryawan();
+            frame.setSize(300, 300); // Set the size of the window
+            frame.add(Mkaryawan);
+            frame.setVisible(true);
     }//GEN-LAST:event_btn_MenuKaryawanActionPerformed
 
     private void btn_MenuKaryawanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_MenuKaryawanMouseClicked
