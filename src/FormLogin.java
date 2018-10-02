@@ -34,11 +34,14 @@ public class FormLogin extends javax.swing.JFrame {
         btnLogin = new javax.swing.JButton();
         btnCancel = new javax.swing.JButton();
         txtPass = new javax.swing.JPasswordField();
+        jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(102, 204, 255));
         getContentPane().setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("<html>APLIKASI PENGOLAHAN SURAT MASUK <br>DAN SURAT KELUAR PDAM PURWAKARTA</html>");
         jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -80,6 +83,10 @@ public class FormLogin extends javax.swing.JFrame {
         getContentPane().add(txtPass);
         txtPass.setBounds(150, 110, 181, 30);
 
+        jPanel1.setBackground(new java.awt.Color(0, 153, 255));
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 0, 380, 190);
+
         setSize(new java.awt.Dimension(395, 231));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
@@ -88,7 +95,7 @@ public class FormLogin extends javax.swing.JFrame {
 
         // TODO add your handling code here:
         try {
-            Connection c = KoneksiDatabase.getKoneksi();
+            Connection c = delta.KoneksiDatabase.getKoneksi();
             Statement s = c.createStatement();
             String sql = "SELECT * FROM t_karyawan where username='"+txtUsername.getText() + "' and password='"+ txtPass.getText() +"'";
             
@@ -159,6 +166,7 @@ public class FormLogin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField txtPass;
     private javax.swing.JTextField txtUsername;
     // End of variables declaration//GEN-END:variables

@@ -28,8 +28,8 @@ public class MenuUtama extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         btn_MenuKaryawan = new javax.swing.JMenuItem();
@@ -48,14 +48,18 @@ public class MenuUtama extends javax.swing.JFrame {
                 formWindowOpened(evt);
             }
         });
-
-        jLabel2.setFont(new java.awt.Font("Myanmar Text", 0, 18)); // NOI18N
-        jLabel2.setText("Sistem Informasi Pengolahan Surat Masuk dan Surat Keluar PDAM Purwakarta\n");
-        jLabel2.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        getContentPane().add(jLabel2, java.awt.BorderLayout.CENTER);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(jLabel1, java.awt.BorderLayout.PAGE_START);
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 545, -1));
+
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, -1, -1));
 
         jMenu1.setText("Master");
         jMenu1.addMenuListener(new javax.swing.event.MenuListener() {
@@ -141,6 +145,11 @@ public class MenuUtama extends javax.swing.JFrame {
         //new MasterKaryawan().show();
     }//GEN-LAST:event_btn_MenuKaryawanMouseClicked
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        new MasterKaryawan().setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -181,8 +190,8 @@ public class MenuUtama extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem btn_MenuKaryawan;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
