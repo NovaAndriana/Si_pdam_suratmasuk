@@ -28,38 +28,25 @@ public class MenuUtama extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        btn_MenuKaryawan = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        MenuKaryawan = new javax.swing.JMenuItem();
+        MenuBidang = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(51, 153, 255));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
             }
         });
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 545, -1));
-
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, -1, -1));
+        getContentPane().setLayout(null);
 
         jMenu1.setText("Master");
         jMenu1.addMenuListener(new javax.swing.event.MenuListener() {
@@ -72,21 +59,16 @@ public class MenuUtama extends javax.swing.JFrame {
             }
         });
 
-        btn_MenuKaryawan.setText("Master Karyawan");
-        btn_MenuKaryawan.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_MenuKaryawanMouseClicked(evt);
-            }
-        });
-        btn_MenuKaryawan.addActionListener(new java.awt.event.ActionListener() {
+        MenuKaryawan.setText("Master Karyawan");
+        MenuKaryawan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_MenuKaryawanActionPerformed(evt);
+                MenuKaryawanActionPerformed(evt);
             }
         });
-        jMenu1.add(btn_MenuKaryawan);
+        jMenu1.add(MenuKaryawan);
 
-        jMenuItem2.setText("Master Bidang");
-        jMenu1.add(jMenuItem2);
+        MenuBidang.setText("Master Bidang");
+        jMenu1.add(MenuBidang);
 
         jMenuBar1.add(jMenu1);
 
@@ -98,11 +80,11 @@ public class MenuUtama extends javax.swing.JFrame {
 
         jMenu4.setText("Laporan");
 
-        jMenuItem3.setText("Laporan Surat Masuk");
-        jMenu4.add(jMenuItem3);
+        jMenuItem2.setText("Laporan Surat Masuk");
+        jMenu4.add(jMenuItem2);
 
-        jMenuItem4.setText("Laporan Surat Keluar");
-        jMenu4.add(jMenuItem4);
+        jMenuItem1.setText("Laporan Surat Keluar");
+        jMenu4.add(jMenuItem1);
 
         jMenuBar1.add(jMenu4);
 
@@ -124,31 +106,10 @@ public class MenuUtama extends javax.swing.JFrame {
         //new frm_Karyawan().setVisible(true);
     }//GEN-LAST:event_jMenu1MenuSelected
 
-    private void btn_MenuKaryawanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_MenuKaryawanActionPerformed
-        // TODO add your handling code here:
-        //MasterKaryawan B = new MasterKaryawan();
-             //this.add(B);
-            //B.setVisible(true);
-            //new MasterKaryawan().show();
-            
-            MasterKaryawan Mkaryawan = new MasterKaryawan();
-            
-            MasterKaryawan frame = new MasterKaryawan();
-            frame.setSize(300, 300); // Set the size of the window
-            frame.add(Mkaryawan);
-            frame.setVisible(true);
-    }//GEN-LAST:event_btn_MenuKaryawanActionPerformed
-
-    private void btn_MenuKaryawanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_MenuKaryawanMouseClicked
+    private void MenuKaryawanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuKaryawanActionPerformed
         // TODO add your handling code here:
         new MasterKaryawan().setVisible(true);
-        //new MasterKaryawan().show();
-    }//GEN-LAST:event_btn_MenuKaryawanMouseClicked
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        new MasterKaryawan().setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_MenuKaryawanActionPerformed
 
     /**
      * @param args the command line arguments
@@ -189,17 +150,15 @@ public class MenuUtama extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem btn_MenuKaryawan;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JMenuItem MenuBidang;
+    private javax.swing.JMenuItem MenuKaryawan;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
     // End of variables declaration//GEN-END:variables
 }

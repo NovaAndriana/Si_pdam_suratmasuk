@@ -110,6 +110,7 @@ public class FormLogin extends javax.swing.JFrame {
                 //JOptionPane.showMessageDialog(null,"Berhasil Login");
                 new MenuUtama().show(); 
                 dispose();
+                
             }else {
                 JOptionPane.showMessageDialog(null,"Gagal Login");
             }
