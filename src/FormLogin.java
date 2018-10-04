@@ -104,6 +104,7 @@ public class FormLogin extends javax.swing.JFrame {
             int baris = 0;
             while (r.next()) {
                 baris = r.getRow();
+                UserID.setUserLogin(txtUsername.getText());
             }
             
             if (baris ==1) {

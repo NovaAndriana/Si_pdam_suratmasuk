@@ -12,11 +12,13 @@ import javax.swing.JFrame;
 
 public class MenuUtama extends javax.swing.JFrame {
 
+    String ID = UserID.getUserLogin();
     /**
      * Creates new form MenuUtama
      */
     public MenuUtama() {
         initComponents();
+        //Lb_Username.setText(ID);
     }
 
     /**
@@ -28,16 +30,20 @@ public class MenuUtama extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuItem3 = new javax.swing.JMenuItem();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         MenuKaryawan = new javax.swing.JMenuItem();
         MenuBidang = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenu3 = new javax.swing.JMenu();
+        BtnMenuSuratMasuk = new javax.swing.JMenu();
+        jMenuItem4 = new javax.swing.JMenuItem();
+        BtnMenuSuratKeluar = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
+
+        jMenuItem3.setText("jMenuItem3");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 153, 255));
@@ -68,15 +74,34 @@ public class MenuUtama extends javax.swing.JFrame {
         jMenu1.add(MenuKaryawan);
 
         MenuBidang.setText("Master Bidang");
+        MenuBidang.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuBidangActionPerformed(evt);
+            }
+        });
         jMenu1.add(MenuBidang);
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Surat Masuk");
-        jMenuBar1.add(jMenu2);
+        BtnMenuSuratMasuk.setText("Surat Masuk");
+        BtnMenuSuratMasuk.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnMenuSuratMasukActionPerformed(evt);
+            }
+        });
 
-        jMenu3.setText("Surat Keluar");
-        jMenuBar1.add(jMenu3);
+        jMenuItem4.setText("Tampil");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
+        BtnMenuSuratMasuk.add(jMenuItem4);
+
+        jMenuBar1.add(BtnMenuSuratMasuk);
+
+        BtnMenuSuratKeluar.setText("Surat Keluar");
+        jMenuBar1.add(BtnMenuSuratKeluar);
 
         jMenu4.setText("Laporan");
 
@@ -89,11 +114,16 @@ public class MenuUtama extends javax.swing.JFrame {
         jMenuBar1.add(jMenu4);
 
         jMenu5.setText("Tentang");
+        jMenu5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu5ActionPerformed(evt);
+            }
+        });
         jMenuBar1.add(jMenu5);
 
         setJMenuBar(jMenuBar1);
 
-        setBounds(0, 0, 561, 454);
+        setBounds(0, 0, 722, 468);
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
@@ -108,8 +138,27 @@ public class MenuUtama extends javax.swing.JFrame {
 
     private void MenuKaryawanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuKaryawanActionPerformed
         // TODO add your handling code here:
-        new MasterKaryawan().setVisible(true);
+        new FrmKaryawan().setVisible(true);
     }//GEN-LAST:event_MenuKaryawanActionPerformed
+
+    private void MenuBidangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuBidangActionPerformed
+        // TODO add your handling code here:
+        new MasterBidang().setVisible(true);
+    }//GEN-LAST:event_MenuBidangActionPerformed
+
+    private void BtnMenuSuratMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMenuSuratMasukActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnMenuSuratMasukActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        // TODO add your handling code here:
+        new FrmSuratMasuk().setVisible(true);
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void jMenu5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu5ActionPerformed
+        // TODO add your handling code here:
+        new FrmTentang().setVisible(true);
+    }//GEN-LAST:event_jMenu5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -150,15 +199,17 @@ public class MenuUtama extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu BtnMenuSuratKeluar;
+    private javax.swing.JMenu BtnMenuSuratMasuk;
     private javax.swing.JMenuItem MenuBidang;
     private javax.swing.JMenuItem MenuKaryawan;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
     // End of variables declaration//GEN-END:variables
 }
