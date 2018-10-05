@@ -36,7 +36,6 @@ public class MenuUtama extends javax.swing.JFrame {
         MenuKaryawan = new javax.swing.JMenuItem();
         MenuBidang = new javax.swing.JMenuItem();
         BtnMenuSuratMasuk = new javax.swing.JMenu();
-        jMenuItem4 = new javax.swing.JMenuItem();
         BtnMenuSuratKeluar = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
@@ -84,20 +83,16 @@ public class MenuUtama extends javax.swing.JFrame {
         jMenuBar1.add(jMenu1);
 
         BtnMenuSuratMasuk.setText("Surat Masuk");
+        BtnMenuSuratMasuk.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BtnMenuSuratMasukMouseClicked(evt);
+            }
+        });
         BtnMenuSuratMasuk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnMenuSuratMasukActionPerformed(evt);
             }
         });
-
-        jMenuItem4.setText("Tampil");
-        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem4ActionPerformed(evt);
-            }
-        });
-        BtnMenuSuratMasuk.add(jMenuItem4);
-
         jMenuBar1.add(BtnMenuSuratMasuk);
 
         BtnMenuSuratKeluar.setText("Surat Keluar");
@@ -114,6 +109,11 @@ public class MenuUtama extends javax.swing.JFrame {
         jMenuBar1.add(jMenu4);
 
         jMenu5.setText("Tentang");
+        jMenu5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu5MouseClicked(evt);
+            }
+        });
         jMenu5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenu5ActionPerformed(evt);
@@ -150,15 +150,20 @@ public class MenuUtama extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_BtnMenuSuratMasukActionPerformed
 
-    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-        // TODO add your handling code here:
-        new FrmSuratMasuk().setVisible(true);
-    }//GEN-LAST:event_jMenuItem4ActionPerformed
-
     private void jMenu5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu5ActionPerformed
         // TODO add your handling code here:
-        new FrmTentang().setVisible(true);
+        
     }//GEN-LAST:event_jMenu5ActionPerformed
+
+    private void jMenu5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu5MouseClicked
+        // TODO add your handling code here:
+        new FrmTentang().setVisible(true);
+    }//GEN-LAST:event_jMenu5MouseClicked
+
+    private void BtnMenuSuratMasukMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnMenuSuratMasukMouseClicked
+        // TODO add your handling code here:
+        new FrmSuratMasuk().setVisible(true);
+    }//GEN-LAST:event_BtnMenuSuratMasukMouseClicked
 
     /**
      * @param args the command line arguments
@@ -210,6 +215,5 @@ public class MenuUtama extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
     // End of variables declaration//GEN-END:variables
 }
