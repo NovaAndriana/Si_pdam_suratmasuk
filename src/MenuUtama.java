@@ -8,7 +8,15 @@
  */
 
 import static java.awt.SystemColor.menu;
+import java.io.File;
 import javax.swing.JFrame;
+import java.io.File;
+import javax.swing.JOptionPane;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
 public class MenuUtama extends javax.swing.JFrame {
 
@@ -96,11 +104,21 @@ public class MenuUtama extends javax.swing.JFrame {
         jMenuBar1.add(BtnMenuSuratMasuk);
 
         BtnMenuSuratKeluar.setText("Surat Keluar");
+        BtnMenuSuratKeluar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BtnMenuSuratKeluarMouseClicked(evt);
+            }
+        });
         jMenuBar1.add(BtnMenuSuratKeluar);
 
         jMenu4.setText("Laporan");
 
         jMenuItem2.setText("Laporan Surat Masuk");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
         jMenu4.add(jMenuItem2);
 
         jMenuItem1.setText("Laporan Surat Keluar");
@@ -164,6 +182,26 @@ public class MenuUtama extends javax.swing.JFrame {
         // TODO add your handling code here:
         new FrmSuratMasuk().setVisible(true);
     }//GEN-LAST:event_BtnMenuSuratMasukMouseClicked
+
+    private void BtnMenuSuratKeluarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnMenuSuratKeluarMouseClicked
+        // TODO add your handling code here:
+        new FrmSuratKeluar().setVisible(true);
+    }//GEN-LAST:event_BtnMenuSuratKeluarMouseClicked
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+        try {
+   
+    String namafile= "src/laporan/RptSuratMasuk.jasper"; 
+    File report = new File(namafile);
+    JasperReport jreprt = (JasperReport)JRLoader.loadObject(report.getPath());
+    JasperPrint jprintt = JasperFillManager.fillReport(jreprt,null, delta.KoneksiDatabase.getKoneksi());
+    JasperViewer.viewReport(jprintt,false);
+   
+  } catch (Exception e) {
+  JOptionPane.showMessageDialog(null, "Gagal Membuka Laporan","Cetak Laporan",JOptionPane.ERROR_MESSAGE);
+  }
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     /**
      * @param args the command line arguments

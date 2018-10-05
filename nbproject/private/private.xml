@@ -4,9 +4,9 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/ITBPFI/Documents/GitHub/Si_pdam_suratmasuk/src/MenuUtama.java</file>
-            <file>file:/C:/Users/ITBPFI/Documents/GitHub/Si_pdam_suratmasuk/src/FormLogin.java</file>
-            <file>file:/C:/Users/ITBPFI/Documents/GitHub/Si_pdam_suratmasuk/src/FrmTentang.java</file>
-            <file>file:/C:/Users/ITBPFI/Documents/GitHub/Si_pdam_suratmasuk/src/FrmSuratMasuk.java</file>
+            <file>file:/C:/Users/ITBPFI/Documents/GitHub/Si_pdam_suratmasuk/src/MasterBidang.java</file>
+            <file>file:/C:/Users/ITBPFI/Documents/GitHub/Si_pdam_suratmasuk/src/KoneksiDatabase.java</file>
+            <file>file:/C:/Users/ITBPFI/Documents/GitHub/Si_pdam_suratmasuk/src/laporan/RptSuratKeluar.jrxml</file>
         </group>
     </open-files>
 </project-private>

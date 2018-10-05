@@ -8,9 +8,11 @@ import java.awt.HeadlessException;
 import java.sql.Connection;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import net.proteanit.sql.DbUtils;
 public class FrmKaryawan extends javax.swing.JFrame {
 public boolean databaru;
+
     /**
      * Creates new form FrmKaryawan
      */
@@ -156,10 +158,10 @@ public boolean databaru;
         jPanel1.add(btnTambah, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 143, -1, -1));
 
         TxtCari.addInputMethodListener(new java.awt.event.InputMethodListener() {
-            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
-            }
             public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
                 TxtCariInputMethodTextChanged(evt);
+            }
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
             }
         });
         TxtCari.addActionListener(new java.awt.event.ActionListener() {
@@ -345,7 +347,26 @@ private void GetData(){ // menampilkan data dari database
 
     private void TxtCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtCariActionPerformed
         // TODO add your handling code here:
-        
+        DefaultTableModel tabelnyo = new DefaultTableModel();
+        try{
+                //String sql = "Select * from mahasiswa where nobp like '%" + TxtCari.getText() + "%'" +
+                //"or nama like '%" + TxtCari.getText() + "%'";
+                java.sql.Connection conn =(java.sql.Connection)delta.KoneksiDatabase.getKoneksi();
+                java.sql.Statement stm = conn.createStatement();
+                stm = conn.createStatement();
+                java.sql.ResultSet sql = stm.executeQuery("Select * from t_karyawan where id_karyawan like '%" + TxtCari.getText() + "%'" +  "or nm_karyawan like '%" + TxtCari.getText() + "%'");
+                while (sql.next()) {
+                tabelnyo.addRow(new Object[]{
+                sql.getString(1),
+                sql.getString(2),
+                sql.getString(3)
+                });
+                }
+                jTable1.setModel(tabelnyo);
+                //JOptionPane.showMessageDialog(null, "berhasil dirubah");
+                }catch (Exception e){
+                   JOptionPane.showMessageDialog(null,"Data Tidak ditemukan!");
+                }
     }//GEN-LAST:event_TxtCariActionPerformed
 
     /**
